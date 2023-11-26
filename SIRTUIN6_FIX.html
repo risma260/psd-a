@@ -1,0 +1,2288 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Klasifikasi Energi di dalam Sirtuin6 &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'SIRTUIN6_FIX';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Klasifikasi Pengenalan Audio" href="ZCR_FIX.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/mining.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/mining.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Profil
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ZCR_FIX.html"><strong>Klasifikasi Pengenalan Audio</strong></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Klasifikasi Energi di dalam Sirtuin6</strong></a></li>
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/risma260/PSD/blob/main/SIRTUIN6_FIX.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/risma260/psd-a" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FSIRTUIN6_FIX.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/SIRTUIN6_FIX.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Klasifikasi Energi di dalam Sirtuin6</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Klasifikasi Energi di dalam Sirtuin6</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding"><strong>DATA UNDERSTANDING</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset"><strong>DESKRIPSI DATASET</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-fitur"><strong>PENJELASAN FITUR</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-kelas"><strong>PENJELASAN KELAS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-missing-value"><strong>IDENTIFIKASI MISSING VALUE</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-duplikasi-data"><strong>IDENTIFIKASI DUPLIKASI DATA</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data"><strong>EKSPLORASI DATA</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing"><strong>PREPROCESSING</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-minmax-setelah-split-data-normalisasi-bisa-dilakukan-sebelum-atau-sesudah-split-data"><strong>NORMALISASI MINMAX SETELAH SPLIT DATA (normalisasi bisa dilakukan sebelum atau sesudah split data)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pycaret"><strong>PYCARET</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-random-forest"><strong>MODEL RANDOM FOREST</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#link-streamlit">LINK STREAMLIT</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="klasifikasi-energi-di-dalam-sirtuin6">
+<h1><strong>Klasifikasi Energi di dalam Sirtuin6</strong><a class="headerlink" href="#klasifikasi-energi-di-dalam-sirtuin6" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="o">%</span><span class="k">cd</span> /content/drive/MyDrive/PSD/sirtuin6
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-651762b63d38&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;cd&#39;</span><span class="p">,</span> <span class="s1">&#39;/content/drive/MyDrive/PSD/sirtuin6&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">103</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>       <span class="n">mountpoint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>   <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>   <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">96</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>       <span class="k">continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="p">(</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Library</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
+<h1><strong>DATA UNDERSTANDING</strong><a class="headerlink" href="#data-understanding" title="Permalink to this heading">#</a></h1>
+<section id="deskripsi-dataset">
+<h2><strong>DESKRIPSI DATASET</strong><a class="headerlink" href="#deskripsi-dataset" title="Permalink to this heading">#</a></h2>
+<p>Dataset ini mengklasifikasikan ikatan dalam protein yang bernama “sirtuin6” tersebut memiliki energi yang <strong>tinggi</strong> atau <strong>rendah</strong></p>
+<p>Tujuannya adalah untuk menyaring senyawa-senyawa yang memiliki BFE tinggi dan untuk memilih senyawa-senyawa BFE rendah yang spesifik untuk protein target (sirtuin6). Ada tujuh Sirtuin mamalia (SIRT1-7) yang menunjukkan lokalisasi intraseluler berbeda dan melakukan deasetilasi rangkaian protein substrat yang berbeda. Di antara Sirtuin, Sirtuin6 adalah enzim kunci dalam berbagai jalur molekuler yang berkaitan dengan penuaan, perbaikan DNA, pemeliharaan telomer, glikolisis, dan kanker.</p>
+<p>data didapatkan dari <a class="reference external" href="https://archive.ics.uci.edu/dataset/748/sirtuin6+small+molecules-1">https://archive.ics.uci.edu/dataset/748/sirtuin6+small+molecules-1</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Read data file csv</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;SIRTUIN6.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-0de643e8-434a-4868-89b3-b25067ae2d9c" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SC_5</th>
+      <th>SP_6</th>
+      <th>SHBd</th>
+      <th>minHaaCH</th>
+      <th>maxwHBa</th>
+      <th>FMF</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.540936</td>
+      <td>7.64192</td>
+      <td>0.162171</td>
+      <td>0.445270</td>
+      <td>2.205570</td>
+      <td>0.467742</td>
+      <td>High_BFE</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.815332</td>
+      <td>6.59011</td>
+      <td>0.000000</td>
+      <td>0.497445</td>
+      <td>2.003140</td>
+      <td>0.415385</td>
+      <td>High_BFE</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.734399</td>
+      <td>6.85522</td>
+      <td>0.000000</td>
+      <td>0.507748</td>
+      <td>1.885900</td>
+      <td>0.400000</td>
+      <td>High_BFE</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.624557</td>
+      <td>7.00949</td>
+      <td>0.450300</td>
+      <td>0.483648</td>
+      <td>2.027570</td>
+      <td>0.500000</td>
+      <td>High_BFE</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.460290</td>
+      <td>4.92643</td>
+      <td>0.448998</td>
+      <td>0.482293</td>
+      <td>2.064380</td>
+      <td>0.536585</td>
+      <td>High_BFE</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>0.083333</td>
+      <td>3.50569</td>
+      <td>0.000000</td>
+      <td>0.438522</td>
+      <td>2.221560</td>
+      <td>0.307692</td>
+      <td>Low_BFE</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>0.707068</td>
+      <td>4.58381</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.011251</td>
+      <td>0.153846</td>
+      <td>Low_BFE</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>0.216506</td>
+      <td>3.09490</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.326531</td>
+      <td>Low_BFE</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>0.271018</td>
+      <td>2.39997</td>
+      <td>0.000000</td>
+      <td>0.356727</td>
+      <td>2.346090</td>
+      <td>0.342105</td>
+      <td>Low_BFE</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>0.136083</td>
+      <td>3.28751</td>
+      <td>0.000000</td>
+      <td>0.380529</td>
+      <td>2.346010</td>
+      <td>0.375000</td>
+      <td>Low_BFE</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 7 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-0de643e8-434a-4868-89b3-b25067ae2d9c')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-0de643e8-434a-4868-89b3-b25067ae2d9c button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-0de643e8-434a-4868-89b3-b25067ae2d9c');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-fcbef8e1-3f98-487f-b4d7-9bef364b8204">
+  <button class="colab-df-quickchart" onclick="quickchart('df-fcbef8e1-3f98-487f-b4d7-9bef364b8204')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-fcbef8e1-3f98-487f-b4d7-9bef364b8204 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="penjelasan-fitur">
+<h2><strong>PENJELASAN FITUR</strong><a class="headerlink" href="#penjelasan-fitur" title="Permalink to this heading">#</a></h2>
+<p>ada pendekatan dengan 6 deskriptor molekuler spesifik, yaitu:</p>
+<p><strong>SC_5</strong> = parameter sequential dalam molekul</p>
+<p><strong>SP_6</strong> = karakteristik posisi ke-6 dalam molekul</p>
+<p><strong>SHBd</strong> = jumlah atom hidrogen</p>
+<p><strong>minHaaCH</strong> = jumlah minimum atom</p>
+<p><strong>maxwHBa</strong> = berat maksimum atom</p>
+<p><strong>FMF</strong> = ukuran molekul / atom</p>
+</section>
+<section id="penjelasan-kelas">
+<h2><strong>PENJELASAN KELAS</strong><a class="headerlink" href="#penjelasan-kelas" title="Permalink to this heading">#</a></h2>
+<p>Terdapat 2 kelas yaitu <strong>High_BFE</strong>(di bawah ÿ8,3 kkal/mol) dan <strong>Low_BFE</strong>(di atas ÿ8,3 kkal/mol) dimana kelas tersebut menunjukkan apakah protein memiliki energi yang tinggi(High_BFE) atau rendah(Low_BFE)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Banyaknya data : &quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Banyaknya kolom : &quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Banyaknya data :  100
+Banyaknya kolom :  7
+</pre></div>
+</div>
+</div>
+</div>
+<p>jumlah data ada 100</p>
+<p>dengan jumlah masing-masing kelas sebanyak 50 data</p>
+<p>tipe data numeric, tidak ada data kosong</p>
+</section>
+<section id="identifikasi-missing-value">
+<h2><strong>IDENTIFIKASI MISSING VALUE</strong><a class="headerlink" href="#identifikasi-missing-value" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung apakah ada nilai yang hilang dalam setiap kolom</span>
+<span class="n">missing_values</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+
+<span class="c1"># Menampilkan hasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Apakah ada nilai yang hilang dalam setiap kolom:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">missing_values</span><span class="p">)</span>
+<span class="n">nan_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data dengan nilai NaN:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nan_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Apakah ada nilai yang hilang dalam setiap kolom:
+SC_5        False
+SP_6        False
+SHBd        False
+minHaaCH    False
+maxwHBa     False
+FMF         False
+Class       False
+dtype: bool
+Data dengan nilai NaN:
+Empty DataFrame
+Columns: [SC_5, SP_6, SHBd, minHaaCH, maxwHBa, FMF, Class]
+Index: []
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="identifikasi-duplikasi-data">
+<h2><strong>IDENTIFIKASI DUPLIKASI DATA</strong><a class="headerlink" href="#identifikasi-duplikasi-data" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jumlah_duplikat</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Menampilkan jumlah data yang duplikat</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data yang duplikat:&quot;</span><span class="p">,</span> <span class="n">jumlah_duplikat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah data yang duplikat: 0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eksplorasi-data">
+<h2><strong>EKSPLORASI DATA</strong><a class="headerlink" href="#eksplorasi-data" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import library</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Distribusi data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="c1"># Simpan gambar sebelum menampilkan</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;histogram.png&#39;</span><span class="p">)</span>
+<span class="c1"># Tampilkan plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/307d7ca0e7f5e91e11a5f0275a78cf2fae57e44b9f9123e5171a0f8fb6331f2f.png" src="_images/307d7ca0e7f5e91e11a5f0275a78cf2fae57e44b9f9123e5171a0f8fb6331f2f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Memasukkan jumlah data dari setiap kelas</span>
+<span class="n">class_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="c1"># Membuat plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">class_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">class_counts</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Jumlah Data dari Setiap Kelas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Kelas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Jumlah Data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/587c89dae9aebb516a9872818a8f9b814c8b211f94f7466a43f16d3576201ac5.png" src="_images/587c89dae9aebb516a9872818a8f9b814c8b211f94f7466a43f16d3576201ac5.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="preprocessing">
+<h1><strong>PREPROCESSING</strong><a class="headerlink" href="#preprocessing" title="Permalink to this heading">#</a></h1>
+<section id="normalisasi-minmax-setelah-split-data-normalisasi-bisa-dilakukan-sebelum-atau-sesudah-split-data">
+<h2><strong>NORMALISASI MINMAX SETELAH SPLIT DATA (normalisasi bisa dilakukan sebelum atau sesudah split data)</strong><a class="headerlink" href="#normalisasi-minmax-setelah-split-data-normalisasi-bisa-dilakukan-sebelum-atau-sesudah-split-data" title="Permalink to this heading">#</a></h2>
+<p><strong>Normalisasi Min-Max</strong> adalah salah satu teknik preprocessing data yang digunakan untuk mengubah skala data numerik ke dalam rentang tertentu, biasanya dari 0 hingga 1. Tujuan utama dari normalisasi Min-Max adalah untuk menjaga skala data sehingga nilai-nilai dari berbagai fitur atau variabel memiliki rentang yang serupa, sehingga model pembelajaran mesin dapat bekerja lebih efisien dan tidak terpengaruh oleh perbedaan skala.</p>
+<p>Gunakan Rumus Normalisasi Min-Max: Untuk setiap nilai dalam fitur, gunakan rumus berikut untuk menghitung nilai yang telah dinormalisasi (X_normalized):</p>
+<p><span class="math notranslate nohighlight">\(x_{\text{normal}} = \frac{{x - \min(x)}}{{\max(x) - \min(x)}}\)</span></p>
+<p>di mana:</p>
+<ul class="simple">
+<li><p>X adalah nilai asli dalam fitur.</p></li>
+<li><p>Min(x) adalah nilai minimum dalam fitur.</p></li>
+<li><p>Max(x) adalah nilai maksimum dalam fitur.</p></li>
+</ul>
+<p><strong>Pemisahan dataset</strong>, atau splitting dataset, adalah proses membagi dataset menjadi dua atau lebih subset yang berbeda. Tujuan utama dari pemisahan dataset adalah untuk memungkinkan evaluasi dan pengujian model pembelajaran mesin dengan benar.</p>
+<ul class="simple">
+<li><p>Memisahkan Fitur dan Target: Dataset asli (data) dibagi menjadi dua bagian: fitur (X) dan target (Y). Fitur adalah kolom data yang akan digunakan sebagai input untuk model pembelajaran mesin, sedangkan target adalah kolom yang akan diprediksi oleh model.</p></li>
+<li><p>Memisahkan Data Latihan dan Data Uji: Fungsi train_test_split digunakan untuk membagi dataset menjadi data latihan (X_train dan Y_train) dan data uji (X_test dan Y_test). Parameter test_size = 0.3 menentukan bahwa 30% dari data akan menjadi data uji, sementara 70% sisanya akan menjadi data latihan. Parameter random_state = 42 digunakan untuk mengatur seed (bilangan acak awal) sehingga pembagian dataset ini dapat direproduksi jika diperlukan.</p></li>
+<li><p>Menampilkan Informasi Dataset: Kode selanjutnya mencetak jumlah total data dalam dataset (X.shape[0]), jumlah data latihan (X_train.shape[0]), dan jumlah data uji (X_test.shape[0]).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">pickle</span> <span class="kn">import</span> <span class="n">dump</span>
+
+<span class="c1"># Anggap Anda memiliki DataFrame df dengan fitur dan variabel target</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">]</span>
+
+<span class="c1"># Membagi data menjadi data training dan data testing</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Print Data Latih dan Data Uji</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Keseluruhan : &quot;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Latih : &quot;</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Uji   : &quot;</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Normalisasi Min-Max pada data training</span>
+<span class="n">minmax_scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">X_train_minmax</span> <span class="o">=</span> <span class="n">minmax_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test_minmax</span> <span class="o">=</span> <span class="n">minmax_scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Menyimpan model yang telah dilatih</span>
+<span class="n">dump</span><span class="p">(</span><span class="n">minmax_scaler</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;scaler_sirtuin6.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data Keseluruhan :  100
+Data Latih :  70
+Data Uji   :  30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pycaret">
+<h1><strong>PYCARET</strong><a class="headerlink" href="#pycaret" title="Permalink to this heading">#</a></h1>
+<p><strong>PyCaret</strong> adalah pustaka pembelajaran mesin sumber terbuka Python yang dirancang untuk memudahkan pelaksanaan tugas standar dalam proyek pembelajaran mesin.</p>
+<p>Ini adalah versi Python dari paket pembelajaran mesin Caret di R, populer karena memungkinkan model dievaluasi, dibandingkan, dan disesuaikan pada kumpulan data tertentu hanya dengan beberapa baris kode.</p>
+<p>Pustaka PyCaret menyediakan fitur-fitur ini, memungkinkan praktisi pembelajaran mesin dengan Python memeriksa serangkaian algoritme pembelajaran mesin standar pada kumpulan data klasifikasi atau regresi dengan satu panggilan fungsi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+!pip install pycaret
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_pycaret</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/risma260/PSD/main/SIRTUIN6.csv&#39;</span><span class="p">)</span>
+<span class="n">data_pycaret</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-ff6f2b9f-f319-4186-baf3-952fb4ec59f8" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SC_5</th>
+      <th>SP_6</th>
+      <th>SHBd</th>
+      <th>minHaaCH</th>
+      <th>maxwHBa</th>
+      <th>FMF</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.540936</td>
+      <td>7.64192</td>
+      <td>0.162171</td>
+      <td>0.445270</td>
+      <td>2.20557</td>
+      <td>0.467742</td>
+      <td>High_BFE</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.815332</td>
+      <td>6.59011</td>
+      <td>0.000000</td>
+      <td>0.497445</td>
+      <td>2.00314</td>
+      <td>0.415385</td>
+      <td>High_BFE</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.734399</td>
+      <td>6.85522</td>
+      <td>0.000000</td>
+      <td>0.507748</td>
+      <td>1.88590</td>
+      <td>0.400000</td>
+      <td>High_BFE</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.624557</td>
+      <td>7.00949</td>
+      <td>0.450300</td>
+      <td>0.483648</td>
+      <td>2.02757</td>
+      <td>0.500000</td>
+      <td>High_BFE</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.460290</td>
+      <td>4.92643</td>
+      <td>0.448998</td>
+      <td>0.482293</td>
+      <td>2.06438</td>
+      <td>0.536585</td>
+      <td>High_BFE</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ff6f2b9f-f319-4186-baf3-952fb4ec59f8')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-ff6f2b9f-f319-4186-baf3-952fb4ec59f8 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-ff6f2b9f-f319-4186-baf3-952fb4ec59f8');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-42561450-9153-46e8-bc3e-85f62da55dd0">
+  <button class="colab-df-quickchart" onclick="quickchart('df-42561450-9153-46e8-bc3e-85f62da55dd0')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-42561450-9153-46e8-bc3e-85f62da55dd0 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycaret.classification</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="c1"># Inisialisasi pycaret</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">setup</span><span class="p">(</span><span class="n">data_pycaret</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="n">session_id</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="c1"># Bandingkan beberapa model</span>
+<span class="n">best_model</span> <span class="o">=</span> <span class="n">compare_models</span><span class="p">(</span><span class="n">fold</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Membuat model terpilih (tanpa tuning)</span>
+<span class="n">selected_model</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="n">best_model</span><span class="p">)</span>
+
+<span class="c1"># Melakukan normalisasi Min-Max pada seluruh fitur</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="s1">&#39;X_train&#39;</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="s1">&#39;X_test&#39;</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="s1">&#39;y_train&#39;</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="s1">&#39;y_test&#39;</span><span class="p">)</span>
+
+<span class="n">minmax_scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">X_train_minmax</span> <span class="o">=</span> <span class="n">minmax_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test_minmax</span> <span class="o">=</span> <span class="n">minmax_scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Melatih model terpilih pada seluruh fitur</span>
+<span class="n">selected_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_minmax</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Melakukan prediksi pada data testing yang telah dinormalisasi</span>
+<span class="n">y_pred_selected</span> <span class="o">=</span> <span class="n">selected_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_minmax</span><span class="p">)</span>
+
+<span class="c1"># Mengukur akurasi model terpilih</span>
+<span class="n">accuracy_selected</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_selected</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy with all features: </span><span class="si">{</span><span class="n">accuracy_selected</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan model terpilih</span>
+<span class="n">selected_model</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_f9266_row9_col1 {
+  background-color: lightgreen;
+}
+</style>
+<table id="T_f9266" class="dataframe">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_f9266_level0_col0" class="col_heading level0 col0" >Description</th>
+      <th id="T_f9266_level0_col1" class="col_heading level0 col1" >Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_f9266_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_f9266_row0_col0" class="data row0 col0" >Session id</td>
+      <td id="T_f9266_row0_col1" class="data row0 col1" >123</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_f9266_row1_col0" class="data row1 col0" >Target</td>
+      <td id="T_f9266_row1_col1" class="data row1 col1" >Class</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_f9266_row2_col0" class="data row2 col0" >Target type</td>
+      <td id="T_f9266_row2_col1" class="data row2 col1" >Binary</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_f9266_row3_col0" class="data row3 col0" >Target mapping</td>
+      <td id="T_f9266_row3_col1" class="data row3 col1" >High_BFE: 0, Low_BFE: 1</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_f9266_row4_col0" class="data row4 col0" >Original data shape</td>
+      <td id="T_f9266_row4_col1" class="data row4 col1" >(100, 7)</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_f9266_row5_col0" class="data row5 col0" >Transformed data shape</td>
+      <td id="T_f9266_row5_col1" class="data row5 col1" >(100, 7)</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_f9266_row6_col0" class="data row6 col0" >Transformed train set shape</td>
+      <td id="T_f9266_row6_col1" class="data row6 col1" >(70, 7)</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_f9266_row7_col0" class="data row7 col0" >Transformed test set shape</td>
+      <td id="T_f9266_row7_col1" class="data row7 col1" >(30, 7)</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_f9266_row8_col0" class="data row8 col0" >Numeric features</td>
+      <td id="T_f9266_row8_col1" class="data row8 col1" >6</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_f9266_row9_col0" class="data row9 col0" >Preprocess</td>
+      <td id="T_f9266_row9_col1" class="data row9 col1" >True</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row10" class="row_heading level0 row10" >10</th>
+      <td id="T_f9266_row10_col0" class="data row10 col0" >Imputation type</td>
+      <td id="T_f9266_row10_col1" class="data row10 col1" >simple</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row11" class="row_heading level0 row11" >11</th>
+      <td id="T_f9266_row11_col0" class="data row11 col0" >Numeric imputation</td>
+      <td id="T_f9266_row11_col1" class="data row11 col1" >mean</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row12" class="row_heading level0 row12" >12</th>
+      <td id="T_f9266_row12_col0" class="data row12 col0" >Categorical imputation</td>
+      <td id="T_f9266_row12_col1" class="data row12 col1" >mode</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row13" class="row_heading level0 row13" >13</th>
+      <td id="T_f9266_row13_col0" class="data row13 col0" >Fold Generator</td>
+      <td id="T_f9266_row13_col1" class="data row13 col1" >StratifiedKFold</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row14" class="row_heading level0 row14" >14</th>
+      <td id="T_f9266_row14_col0" class="data row14 col0" >Fold Number</td>
+      <td id="T_f9266_row14_col1" class="data row14 col1" >10</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row15" class="row_heading level0 row15" >15</th>
+      <td id="T_f9266_row15_col0" class="data row15 col0" >CPU Jobs</td>
+      <td id="T_f9266_row15_col1" class="data row15 col1" >-1</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row16" class="row_heading level0 row16" >16</th>
+      <td id="T_f9266_row16_col0" class="data row16 col0" >Use GPU</td>
+      <td id="T_f9266_row16_col1" class="data row16 col1" >False</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row17" class="row_heading level0 row17" >17</th>
+      <td id="T_f9266_row17_col0" class="data row17 col0" >Log Experiment</td>
+      <td id="T_f9266_row17_col1" class="data row17 col1" >False</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row18" class="row_heading level0 row18" >18</th>
+      <td id="T_f9266_row18_col0" class="data row18 col0" >Experiment Name</td>
+      <td id="T_f9266_row18_col1" class="data row18 col1" >clf-default-name</td>
+    </tr>
+    <tr>
+      <th id="T_f9266_level0_row19" class="row_heading level0 row19" >19</th>
+      <td id="T_f9266_row19_col0" class="data row19 col0" >USI</td>
+      <td id="T_f9266_row19_col1" class="data row19 col1" >5e13</td>
+    </tr>
+  </tbody>
+</table>
+</div><div class="output text_html"></div><div class="output text_html"><style type="text/css">
+#T_9022a th {
+  text-align: left;
+}
+#T_9022a_row0_col0, #T_9022a_row1_col0, #T_9022a_row1_col1, #T_9022a_row1_col2, #T_9022a_row1_col3, #T_9022a_row1_col4, #T_9022a_row1_col5, #T_9022a_row1_col6, #T_9022a_row1_col7, #T_9022a_row2_col0, #T_9022a_row2_col1, #T_9022a_row2_col2, #T_9022a_row2_col3, #T_9022a_row2_col4, #T_9022a_row2_col5, #T_9022a_row2_col6, #T_9022a_row2_col7, #T_9022a_row3_col0, #T_9022a_row3_col1, #T_9022a_row3_col2, #T_9022a_row3_col3, #T_9022a_row3_col4, #T_9022a_row3_col5, #T_9022a_row3_col6, #T_9022a_row3_col7, #T_9022a_row4_col0, #T_9022a_row4_col1, #T_9022a_row4_col2, #T_9022a_row4_col3, #T_9022a_row4_col4, #T_9022a_row4_col5, #T_9022a_row4_col6, #T_9022a_row4_col7, #T_9022a_row5_col0, #T_9022a_row5_col1, #T_9022a_row5_col2, #T_9022a_row5_col3, #T_9022a_row5_col4, #T_9022a_row5_col5, #T_9022a_row5_col6, #T_9022a_row5_col7, #T_9022a_row6_col0, #T_9022a_row6_col1, #T_9022a_row6_col2, #T_9022a_row6_col3, #T_9022a_row6_col4, #T_9022a_row6_col5, #T_9022a_row6_col6, #T_9022a_row6_col7, #T_9022a_row7_col0, #T_9022a_row7_col1, #T_9022a_row7_col2, #T_9022a_row7_col3, #T_9022a_row7_col4, #T_9022a_row7_col5, #T_9022a_row7_col6, #T_9022a_row7_col7, #T_9022a_row8_col0, #T_9022a_row8_col1, #T_9022a_row8_col2, #T_9022a_row8_col3, #T_9022a_row8_col4, #T_9022a_row8_col5, #T_9022a_row8_col6, #T_9022a_row8_col7, #T_9022a_row9_col0, #T_9022a_row9_col1, #T_9022a_row9_col2, #T_9022a_row9_col3, #T_9022a_row9_col4, #T_9022a_row9_col5, #T_9022a_row9_col6, #T_9022a_row9_col7, #T_9022a_row10_col0, #T_9022a_row10_col1, #T_9022a_row10_col2, #T_9022a_row10_col3, #T_9022a_row10_col4, #T_9022a_row10_col5, #T_9022a_row10_col6, #T_9022a_row10_col7, #T_9022a_row11_col0, #T_9022a_row11_col1, #T_9022a_row11_col2, #T_9022a_row11_col3, #T_9022a_row11_col4, #T_9022a_row11_col5, #T_9022a_row11_col6, #T_9022a_row11_col7, #T_9022a_row12_col0, #T_9022a_row12_col1, #T_9022a_row12_col2, #T_9022a_row12_col3, #T_9022a_row12_col4, #T_9022a_row12_col5, #T_9022a_row12_col6, #T_9022a_row12_col7, #T_9022a_row13_col0, #T_9022a_row13_col1, #T_9022a_row13_col2, #T_9022a_row13_col3, #T_9022a_row13_col4, #T_9022a_row13_col5, #T_9022a_row13_col6, #T_9022a_row13_col7, #T_9022a_row14_col0, #T_9022a_row14_col1, #T_9022a_row14_col2, #T_9022a_row14_col3, #T_9022a_row14_col4, #T_9022a_row14_col5, #T_9022a_row14_col6, #T_9022a_row14_col7 {
+  text-align: left;
+}
+#T_9022a_row0_col1, #T_9022a_row0_col2, #T_9022a_row0_col3, #T_9022a_row0_col4, #T_9022a_row0_col5, #T_9022a_row0_col6, #T_9022a_row0_col7 {
+  text-align: left;
+  background-color: yellow;
+}
+#T_9022a_row0_col8, #T_9022a_row1_col8, #T_9022a_row2_col8, #T_9022a_row3_col8, #T_9022a_row4_col8, #T_9022a_row5_col8, #T_9022a_row6_col8, #T_9022a_row7_col8, #T_9022a_row8_col8, #T_9022a_row10_col8, #T_9022a_row11_col8, #T_9022a_row12_col8, #T_9022a_row13_col8, #T_9022a_row14_col8 {
+  text-align: left;
+  background-color: lightgrey;
+}
+#T_9022a_row9_col8 {
+  text-align: left;
+  background-color: yellow;
+  background-color: lightgrey;
+}
+</style>
+<table id="T_9022a" class="dataframe">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_9022a_level0_col0" class="col_heading level0 col0" >Model</th>
+      <th id="T_9022a_level0_col1" class="col_heading level0 col1" >Accuracy</th>
+      <th id="T_9022a_level0_col2" class="col_heading level0 col2" >AUC</th>
+      <th id="T_9022a_level0_col3" class="col_heading level0 col3" >Recall</th>
+      <th id="T_9022a_level0_col4" class="col_heading level0 col4" >Prec.</th>
+      <th id="T_9022a_level0_col5" class="col_heading level0 col5" >F1</th>
+      <th id="T_9022a_level0_col6" class="col_heading level0 col6" >Kappa</th>
+      <th id="T_9022a_level0_col7" class="col_heading level0 col7" >MCC</th>
+      <th id="T_9022a_level0_col8" class="col_heading level0 col8" >TT (Sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_9022a_level0_row0" class="row_heading level0 row0" >rf</th>
+      <td id="T_9022a_row0_col0" class="data row0 col0" >Random Forest Classifier</td>
+      <td id="T_9022a_row0_col1" class="data row0 col1" >0.8571</td>
+      <td id="T_9022a_row0_col2" class="data row0 col2" >0.9163</td>
+      <td id="T_9022a_row0_col3" class="data row0 col3" >0.8571</td>
+      <td id="T_9022a_row0_col4" class="data row0 col4" >0.8839</td>
+      <td id="T_9022a_row0_col5" class="data row0 col5" >0.8537</td>
+      <td id="T_9022a_row0_col6" class="data row0 col6" >0.7143</td>
+      <td id="T_9022a_row0_col7" class="data row0 col7" >0.7401</td>
+      <td id="T_9022a_row0_col8" class="data row0 col8" >0.2580</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row1" class="row_heading level0 row1" >lightgbm</th>
+      <td id="T_9022a_row1_col0" class="data row1 col0" >Light Gradient Boosting Machine</td>
+      <td id="T_9022a_row1_col1" class="data row1 col1" >0.8286</td>
+      <td id="T_9022a_row1_col2" class="data row1 col2" >0.8898</td>
+      <td id="T_9022a_row1_col3" class="data row1 col3" >0.8286</td>
+      <td id="T_9022a_row1_col4" class="data row1 col4" >0.8417</td>
+      <td id="T_9022a_row1_col5" class="data row1 col5" >0.8265</td>
+      <td id="T_9022a_row1_col6" class="data row1 col6" >0.6571</td>
+      <td id="T_9022a_row1_col7" class="data row1 col7" >0.6700</td>
+      <td id="T_9022a_row1_col8" class="data row1 col8" >0.3020</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row2" class="row_heading level0 row2" >et</th>
+      <td id="T_9022a_row2_col0" class="data row2 col0" >Extra Trees Classifier</td>
+      <td id="T_9022a_row2_col1" class="data row2 col1" >0.8143</td>
+      <td id="T_9022a_row2_col2" class="data row2 col2" >0.9061</td>
+      <td id="T_9022a_row2_col3" class="data row2 col3" >0.8143</td>
+      <td id="T_9022a_row2_col4" class="data row2 col4" >0.8294</td>
+      <td id="T_9022a_row2_col5" class="data row2 col5" >0.8111</td>
+      <td id="T_9022a_row2_col6" class="data row2 col6" >0.6286</td>
+      <td id="T_9022a_row2_col7" class="data row2 col7" >0.6434</td>
+      <td id="T_9022a_row2_col8" class="data row2 col8" >0.3520</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row3" class="row_heading level0 row3" >knn</th>
+      <td id="T_9022a_row3_col0" class="data row3 col0" >K Neighbors Classifier</td>
+      <td id="T_9022a_row3_col1" class="data row3 col1" >0.8000</td>
+      <td id="T_9022a_row3_col2" class="data row3 col2" >0.8184</td>
+      <td id="T_9022a_row3_col3" class="data row3 col3" >0.8000</td>
+      <td id="T_9022a_row3_col4" class="data row3 col4" >0.8208</td>
+      <td id="T_9022a_row3_col5" class="data row3 col5" >0.7962</td>
+      <td id="T_9022a_row3_col6" class="data row3 col6" >0.6000</td>
+      <td id="T_9022a_row3_col7" class="data row3 col7" >0.6201</td>
+      <td id="T_9022a_row3_col8" class="data row3 col8" >0.0580</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row4" class="row_heading level0 row4" >nb</th>
+      <td id="T_9022a_row4_col0" class="data row4 col0" >Naive Bayes</td>
+      <td id="T_9022a_row4_col1" class="data row4 col1" >0.8000</td>
+      <td id="T_9022a_row4_col2" class="data row4 col2" >0.9061</td>
+      <td id="T_9022a_row4_col3" class="data row4 col3" >0.8000</td>
+      <td id="T_9022a_row4_col4" class="data row4 col4" >0.8169</td>
+      <td id="T_9022a_row4_col5" class="data row4 col5" >0.7967</td>
+      <td id="T_9022a_row4_col6" class="data row4 col6" >0.6000</td>
+      <td id="T_9022a_row4_col7" class="data row4 col7" >0.6166</td>
+      <td id="T_9022a_row4_col8" class="data row4 col8" >0.0400</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row5" class="row_heading level0 row5" >qda</th>
+      <td id="T_9022a_row5_col0" class="data row5 col0" >Quadratic Discriminant Analysis</td>
+      <td id="T_9022a_row5_col1" class="data row5 col1" >0.8000</td>
+      <td id="T_9022a_row5_col2" class="data row5 col2" >0.9061</td>
+      <td id="T_9022a_row5_col3" class="data row5 col3" >0.8000</td>
+      <td id="T_9022a_row5_col4" class="data row5 col4" >0.8228</td>
+      <td id="T_9022a_row5_col5" class="data row5 col5" >0.7967</td>
+      <td id="T_9022a_row5_col6" class="data row5 col6" >0.6000</td>
+      <td id="T_9022a_row5_col7" class="data row5 col7" >0.6220</td>
+      <td id="T_9022a_row5_col8" class="data row5 col8" >0.0440</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row6" class="row_heading level0 row6" >gbc</th>
+      <td id="T_9022a_row6_col0" class="data row6 col0" >Gradient Boosting Classifier</td>
+      <td id="T_9022a_row6_col1" class="data row6 col1" >0.8000</td>
+      <td id="T_9022a_row6_col2" class="data row6 col2" >0.8878</td>
+      <td id="T_9022a_row6_col3" class="data row6 col3" >0.8000</td>
+      <td id="T_9022a_row6_col4" class="data row6 col4" >0.8270</td>
+      <td id="T_9022a_row6_col5" class="data row6 col5" >0.7933</td>
+      <td id="T_9022a_row6_col6" class="data row6 col6" >0.6000</td>
+      <td id="T_9022a_row6_col7" class="data row6 col7" >0.6248</td>
+      <td id="T_9022a_row6_col8" class="data row6 col8" >0.1040</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row7" class="row_heading level0 row7" >xgboost</th>
+      <td id="T_9022a_row7_col0" class="data row7 col0" >Extreme Gradient Boosting</td>
+      <td id="T_9022a_row7_col1" class="data row7 col1" >0.8000</td>
+      <td id="T_9022a_row7_col2" class="data row7 col2" >0.9122</td>
+      <td id="T_9022a_row7_col3" class="data row7 col3" >0.8000</td>
+      <td id="T_9022a_row7_col4" class="data row7 col4" >0.8378</td>
+      <td id="T_9022a_row7_col5" class="data row7 col5" >0.7923</td>
+      <td id="T_9022a_row7_col6" class="data row7 col6" >0.6000</td>
+      <td id="T_9022a_row7_col7" class="data row7 col7" >0.6351</td>
+      <td id="T_9022a_row7_col8" class="data row7 col8" >0.1180</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row8" class="row_heading level0 row8" >lr</th>
+      <td id="T_9022a_row8_col0" class="data row8 col0" >Logistic Regression</td>
+      <td id="T_9022a_row8_col1" class="data row8 col1" >0.7857</td>
+      <td id="T_9022a_row8_col2" class="data row8 col2" >0.8694</td>
+      <td id="T_9022a_row8_col3" class="data row8 col3" >0.7857</td>
+      <td id="T_9022a_row8_col4" class="data row8 col4" >0.8111</td>
+      <td id="T_9022a_row8_col5" class="data row8 col5" >0.7814</td>
+      <td id="T_9022a_row8_col6" class="data row8 col6" >0.5714</td>
+      <td id="T_9022a_row8_col7" class="data row8 col7" >0.5959</td>
+      <td id="T_9022a_row8_col8" class="data row8 col8" >1.6920</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row9" class="row_heading level0 row9" >ridge</th>
+      <td id="T_9022a_row9_col0" class="data row9 col0" >Ridge Classifier</td>
+      <td id="T_9022a_row9_col1" class="data row9 col1" >0.7857</td>
+      <td id="T_9022a_row9_col2" class="data row9 col2" >0.0000</td>
+      <td id="T_9022a_row9_col3" class="data row9 col3" >0.7857</td>
+      <td id="T_9022a_row9_col4" class="data row9 col4" >0.8087</td>
+      <td id="T_9022a_row9_col5" class="data row9 col5" >0.7819</td>
+      <td id="T_9022a_row9_col6" class="data row9 col6" >0.5714</td>
+      <td id="T_9022a_row9_col7" class="data row9 col7" >0.5936</td>
+      <td id="T_9022a_row9_col8" class="data row9 col8" >0.0340</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row10" class="row_heading level0 row10" >ada</th>
+      <td id="T_9022a_row10_col0" class="data row10 col0" >Ada Boost Classifier</td>
+      <td id="T_9022a_row10_col1" class="data row10 col1" >0.7714</td>
+      <td id="T_9022a_row10_col2" class="data row10 col2" >0.8653</td>
+      <td id="T_9022a_row10_col3" class="data row10 col3" >0.7714</td>
+      <td id="T_9022a_row10_col4" class="data row10 col4" >0.7878</td>
+      <td id="T_9022a_row10_col5" class="data row10 col5" >0.7680</td>
+      <td id="T_9022a_row10_col6" class="data row10 col6" >0.5429</td>
+      <td id="T_9022a_row10_col7" class="data row10 col7" >0.5589</td>
+      <td id="T_9022a_row10_col8" class="data row10 col8" >0.1220</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row11" class="row_heading level0 row11" >dt</th>
+      <td id="T_9022a_row11_col0" class="data row11 col0" >Decision Tree Classifier</td>
+      <td id="T_9022a_row11_col1" class="data row11 col1" >0.7571</td>
+      <td id="T_9022a_row11_col2" class="data row11 col2" >0.7571</td>
+      <td id="T_9022a_row11_col3" class="data row11 col3" >0.7571</td>
+      <td id="T_9022a_row11_col4" class="data row11 col4" >0.7897</td>
+      <td id="T_9022a_row11_col5" class="data row11 col5" >0.7500</td>
+      <td id="T_9022a_row11_col6" class="data row11 col6" >0.5143</td>
+      <td id="T_9022a_row11_col7" class="data row11 col7" >0.5454</td>
+      <td id="T_9022a_row11_col8" class="data row11 col8" >0.0360</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row12" class="row_heading level0 row12" >lda</th>
+      <td id="T_9022a_row12_col0" class="data row12 col0" >Linear Discriminant Analysis</td>
+      <td id="T_9022a_row12_col1" class="data row12 col1" >0.7571</td>
+      <td id="T_9022a_row12_col2" class="data row12 col2" >0.8776</td>
+      <td id="T_9022a_row12_col3" class="data row12 col3" >0.7571</td>
+      <td id="T_9022a_row12_col4" class="data row12 col4" >0.7718</td>
+      <td id="T_9022a_row12_col5" class="data row12 col5" >0.7545</td>
+      <td id="T_9022a_row12_col6" class="data row12 col6" >0.5143</td>
+      <td id="T_9022a_row12_col7" class="data row12 col7" >0.5283</td>
+      <td id="T_9022a_row12_col8" class="data row12 col8" >0.0380</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row13" class="row_heading level0 row13" >svm</th>
+      <td id="T_9022a_row13_col0" class="data row13 col0" >SVM - Linear Kernel</td>
+      <td id="T_9022a_row13_col1" class="data row13 col1" >0.7143</td>
+      <td id="T_9022a_row13_col2" class="data row13 col2" >0.0000</td>
+      <td id="T_9022a_row13_col3" class="data row13 col3" >0.7143</td>
+      <td id="T_9022a_row13_col4" class="data row13 col4" >0.8217</td>
+      <td id="T_9022a_row13_col5" class="data row13 col5" >0.6826</td>
+      <td id="T_9022a_row13_col6" class="data row13 col6" >0.4286</td>
+      <td id="T_9022a_row13_col7" class="data row13 col7" >0.5213</td>
+      <td id="T_9022a_row13_col8" class="data row13 col8" >0.0360</td>
+    </tr>
+    <tr>
+      <th id="T_9022a_level0_row14" class="row_heading level0 row14" >dummy</th>
+      <td id="T_9022a_row14_col0" class="data row14 col0" >Dummy Classifier</td>
+      <td id="T_9022a_row14_col1" class="data row14 col1" >0.5000</td>
+      <td id="T_9022a_row14_col2" class="data row14 col2" >0.5000</td>
+      <td id="T_9022a_row14_col3" class="data row14 col3" >0.5000</td>
+      <td id="T_9022a_row14_col4" class="data row14 col4" >0.2500</td>
+      <td id="T_9022a_row14_col5" class="data row14 col5" >0.3333</td>
+      <td id="T_9022a_row14_col6" class="data row14 col6" >0.0000</td>
+      <td id="T_9022a_row14_col7" class="data row14 col7" >0.0000</td>
+      <td id="T_9022a_row14_col8" class="data row14 col8" >0.0580</td>
+    </tr>
+  </tbody>
+</table>
+</div><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "e5308c15891e48e2bac642ad7d19d7b3"}</script><div class="output text_html"></div><div class="output text_html"></div><div class="output text_html"><style type="text/css">
+#T_d7244_row10_col0, #T_d7244_row10_col1, #T_d7244_row10_col2, #T_d7244_row10_col3, #T_d7244_row10_col4, #T_d7244_row10_col5, #T_d7244_row10_col6 {
+  background: yellow;
+}
+</style>
+<table id="T_d7244" class="dataframe">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_d7244_level0_col0" class="col_heading level0 col0" >Accuracy</th>
+      <th id="T_d7244_level0_col1" class="col_heading level0 col1" >AUC</th>
+      <th id="T_d7244_level0_col2" class="col_heading level0 col2" >Recall</th>
+      <th id="T_d7244_level0_col3" class="col_heading level0 col3" >Prec.</th>
+      <th id="T_d7244_level0_col4" class="col_heading level0 col4" >F1</th>
+      <th id="T_d7244_level0_col5" class="col_heading level0 col5" >Kappa</th>
+      <th id="T_d7244_level0_col6" class="col_heading level0 col6" >MCC</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >Fold</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+      <th class="blank col3" >&nbsp;</th>
+      <th class="blank col4" >&nbsp;</th>
+      <th class="blank col5" >&nbsp;</th>
+      <th class="blank col6" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_d7244_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_d7244_row0_col0" class="data row0 col0" >0.7143</td>
+      <td id="T_d7244_row0_col1" class="data row0 col1" >0.6667</td>
+      <td id="T_d7244_row0_col2" class="data row0 col2" >0.7143</td>
+      <td id="T_d7244_row0_col3" class="data row0 col3" >0.8286</td>
+      <td id="T_d7244_row0_col4" class="data row0 col4" >0.7024</td>
+      <td id="T_d7244_row0_col5" class="data row0 col5" >0.4615</td>
+      <td id="T_d7244_row0_col6" class="data row0 col6" >0.5477</td>
+    </tr>
+    <tr>
+      <th id="T_d7244_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_d7244_row1_col0" class="data row1 col0" >1.0000</td>
+      <td id="T_d7244_row1_col1" class="data row1 col1" >1.0000</td>
+      <td id="T_d7244_row1_col2" class="data row1 col2" >1.0000</td>
+      <td id="T_d7244_row1_col3" class="data row1 col3" >1.0000</td>
+      <td id="T_d7244_row1_col4" class="data row1 col4" >1.0000</td>
+      <td id="T_d7244_row1_col5" class="data row1 col5" >1.0000</td>
+      <td id="T_d7244_row1_col6" class="data row1 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_d7244_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_d7244_row2_col0" class="data row2 col0" >1.0000</td>
+      <td id="T_d7244_row2_col1" class="data row2 col1" >1.0000</td>
+      <td id="T_d7244_row2_col2" class="data row2 col2" >1.0000</td>
+      <td id="T_d7244_row2_col3" class="data row2 col3" >1.0000</td>
+      <td id="T_d7244_row2_col4" class="data row2 col4" >1.0000</td>
+      <td id="T_d7244_row2_col5" class="data row2 col5" >1.0000</td>
+      <td id="T_d7244_row2_col6" class="data row2 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_d7244_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_d7244_row3_col0" class="data row3 col0" >1.0000</td>
+      <td id="T_d7244_row3_col1" class="data row3 col1" >1.0000</td>
+      <td id="T_d7244_row3_col2" class="data row3 col2" >1.0000</td>
+      <td id="T_d7244_row3_col3" class="data row3 col3" >1.0000</td>
+      <td id="T_d7244_row3_col4" class="data row3 col4" >1.0000</td>
+      <td id="T_d7244_row3_col5" class="data row3 col5" >1.0000</td>
+      <td id="T_d7244_row3_col6" class="data row3 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_d7244_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_d7244_row4_col0" class="data row4 col0" >0.7143</td>
+      <td id="T_d7244_row4_col1" class="data row4 col1" >0.7500</td>
+      <td id="T_d7244_row4_col2" class="data row4 col2" >0.7143</td>
+      <td id="T_d7244_row4_col3" class="data row4 col3" >0.7143</td>
+      <td id="T_d7244_row4_col4" class="data row4 col4" >0.7143</td>
+      <td id="T_d7244_row4_col5" class="data row4 col5" >0.4167</td>
+      <td id="T_d7244_row4_col6" class="data row4 col6" >0.4167</td>
+    </tr>
+    <tr>
+      <th id="T_d7244_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_d7244_row5_col0" class="data row5 col0" >0.7143</td>
+      <td id="T_d7244_row5_col1" class="data row5 col1" >1.0000</td>
+      <td id="T_d7244_row5_col2" class="data row5 col2" >0.7143</td>
+      <td id="T_d7244_row5_col3" class="data row5 col3" >0.8286</td>
+      <td id="T_d7244_row5_col4" class="data row5 col4" >0.7024</td>
+      <td id="T_d7244_row5_col5" class="data row5 col5" >0.4615</td>
+      <td id="T_d7244_row5_col6" class="data row5 col6" >0.5477</td>
+    </tr>
+    <tr>
+      <th id="T_d7244_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_d7244_row6_col0" class="data row6 col0" >1.0000</td>
+      <td id="T_d7244_row6_col1" class="data row6 col1" >1.0000</td>
+      <td id="T_d7244_row6_col2" class="data row6 col2" >1.0000</td>
+      <td id="T_d7244_row6_col3" class="data row6 col3" >1.0000</td>
+      <td id="T_d7244_row6_col4" class="data row6 col4" >1.0000</td>
+      <td id="T_d7244_row6_col5" class="data row6 col5" >1.0000</td>
+      <td id="T_d7244_row6_col6" class="data row6 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_d7244_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_d7244_row7_col0" class="data row7 col0" >0.4286</td>
+      <td id="T_d7244_row7_col1" class="data row7 col1" >0.7500</td>
+      <td id="T_d7244_row7_col2" class="data row7 col2" >0.4286</td>
+      <td id="T_d7244_row7_col3" class="data row7 col3" >0.4571</td>
+      <td id="T_d7244_row7_col4" class="data row7 col4" >0.4048</td>
+      <td id="T_d7244_row7_col5" class="data row7 col5" >-0.0769</td>
+      <td id="T_d7244_row7_col6" class="data row7 col6" >-0.0913</td>
+    </tr>
+    <tr>
+      <th id="T_d7244_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_d7244_row8_col0" class="data row8 col0" >0.8571</td>
+      <td id="T_d7244_row8_col1" class="data row8 col1" >1.0000</td>
+      <td id="T_d7244_row8_col2" class="data row8 col2" >0.8571</td>
+      <td id="T_d7244_row8_col3" class="data row8 col3" >0.8929</td>
+      <td id="T_d7244_row8_col4" class="data row8 col4" >0.8571</td>
+      <td id="T_d7244_row8_col5" class="data row8 col5" >0.7200</td>
+      <td id="T_d7244_row8_col6" class="data row8 col6" >0.7500</td>
+    </tr>
+    <tr>
+      <th id="T_d7244_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_d7244_row9_col0" class="data row9 col0" >0.7143</td>
+      <td id="T_d7244_row9_col1" class="data row9 col1" >0.9167</td>
+      <td id="T_d7244_row9_col2" class="data row9 col2" >0.7143</td>
+      <td id="T_d7244_row9_col3" class="data row9 col3" >0.7143</td>
+      <td id="T_d7244_row9_col4" class="data row9 col4" >0.7143</td>
+      <td id="T_d7244_row9_col5" class="data row9 col5" >0.4167</td>
+      <td id="T_d7244_row9_col6" class="data row9 col6" >0.4167</td>
+    </tr>
+    <tr>
+      <th id="T_d7244_level0_row10" class="row_heading level0 row10" >Mean</th>
+      <td id="T_d7244_row10_col0" class="data row10 col0" >0.8143</td>
+      <td id="T_d7244_row10_col1" class="data row10 col1" >0.9083</td>
+      <td id="T_d7244_row10_col2" class="data row10 col2" >0.8143</td>
+      <td id="T_d7244_row10_col3" class="data row10 col3" >0.8436</td>
+      <td id="T_d7244_row10_col4" class="data row10 col4" >0.8095</td>
+      <td id="T_d7244_row10_col5" class="data row10 col5" >0.6399</td>
+      <td id="T_d7244_row10_col6" class="data row10 col6" >0.6587</td>
+    </tr>
+    <tr>
+      <th id="T_d7244_level0_row11" class="row_heading level0 row11" >Std</th>
+      <td id="T_d7244_row11_col0" class="data row11 col0" >0.1813</td>
+      <td id="T_d7244_row11_col1" class="data row11 col1" >0.1261</td>
+      <td id="T_d7244_row11_col2" class="data row11 col2" >0.1813</td>
+      <td id="T_d7244_row11_col3" class="data row11 col3" >0.1684</td>
+      <td id="T_d7244_row11_col4" class="data row11 col4" >0.1877</td>
+      <td id="T_d7244_row11_col5" class="data row11 col5" >0.3467</td>
+      <td id="T_d7244_row11_col6" class="data row11 col6" >0.3433</td>
+    </tr>
+  </tbody>
+</table>
+</div><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f52b245445ed4c389c5ead2ef7e2b5f2"}</script><div class="output text_html"></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy with all features: 83.3333%
+</pre></div>
+</div>
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion=&#x27;gini&#x27;, max_depth=None, max_features=&#x27;sqrt&#x27;,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=123, verbose=0, warm_start=False)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion=&#x27;gini&#x27;, max_depth=None, max_features=&#x27;sqrt&#x27;,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=123, verbose=0, warm_start=False)</pre></div></div></div></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycaret.classification</span> <span class="kn">import</span> <span class="n">create_model</span><span class="p">,</span> <span class="n">save_model</span><span class="p">,</span> <span class="n">load_model</span>
+
+<span class="c1"># Membuat model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="s1">&#39;rf&#39;</span><span class="p">)</span>
+
+<span class="c1"># Menyimpan model</span>
+<span class="n">save_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="s1">&#39;rf_sirtuin6_pycaret&#39;</span><span class="p">)</span>
+
+<span class="c1"># Memuat kembali model yang telah disimpan</span>
+<span class="n">loaded_model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;rf_sirtuin6_pycaret&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"></div><div class="output text_html"><style type="text/css">
+#T_3d197_row10_col0, #T_3d197_row10_col1, #T_3d197_row10_col2, #T_3d197_row10_col3, #T_3d197_row10_col4, #T_3d197_row10_col5, #T_3d197_row10_col6 {
+  background: yellow;
+}
+</style>
+<table id="T_3d197" class="dataframe">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_3d197_level0_col0" class="col_heading level0 col0" >Accuracy</th>
+      <th id="T_3d197_level0_col1" class="col_heading level0 col1" >AUC</th>
+      <th id="T_3d197_level0_col2" class="col_heading level0 col2" >Recall</th>
+      <th id="T_3d197_level0_col3" class="col_heading level0 col3" >Prec.</th>
+      <th id="T_3d197_level0_col4" class="col_heading level0 col4" >F1</th>
+      <th id="T_3d197_level0_col5" class="col_heading level0 col5" >Kappa</th>
+      <th id="T_3d197_level0_col6" class="col_heading level0 col6" >MCC</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >Fold</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+      <th class="blank col3" >&nbsp;</th>
+      <th class="blank col4" >&nbsp;</th>
+      <th class="blank col5" >&nbsp;</th>
+      <th class="blank col6" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_3d197_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_3d197_row0_col0" class="data row0 col0" >0.7143</td>
+      <td id="T_3d197_row0_col1" class="data row0 col1" >0.6667</td>
+      <td id="T_3d197_row0_col2" class="data row0 col2" >0.7143</td>
+      <td id="T_3d197_row0_col3" class="data row0 col3" >0.8286</td>
+      <td id="T_3d197_row0_col4" class="data row0 col4" >0.7024</td>
+      <td id="T_3d197_row0_col5" class="data row0 col5" >0.4615</td>
+      <td id="T_3d197_row0_col6" class="data row0 col6" >0.5477</td>
+    </tr>
+    <tr>
+      <th id="T_3d197_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_3d197_row1_col0" class="data row1 col0" >1.0000</td>
+      <td id="T_3d197_row1_col1" class="data row1 col1" >1.0000</td>
+      <td id="T_3d197_row1_col2" class="data row1 col2" >1.0000</td>
+      <td id="T_3d197_row1_col3" class="data row1 col3" >1.0000</td>
+      <td id="T_3d197_row1_col4" class="data row1 col4" >1.0000</td>
+      <td id="T_3d197_row1_col5" class="data row1 col5" >1.0000</td>
+      <td id="T_3d197_row1_col6" class="data row1 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_3d197_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_3d197_row2_col0" class="data row2 col0" >1.0000</td>
+      <td id="T_3d197_row2_col1" class="data row2 col1" >1.0000</td>
+      <td id="T_3d197_row2_col2" class="data row2 col2" >1.0000</td>
+      <td id="T_3d197_row2_col3" class="data row2 col3" >1.0000</td>
+      <td id="T_3d197_row2_col4" class="data row2 col4" >1.0000</td>
+      <td id="T_3d197_row2_col5" class="data row2 col5" >1.0000</td>
+      <td id="T_3d197_row2_col6" class="data row2 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_3d197_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_3d197_row3_col0" class="data row3 col0" >1.0000</td>
+      <td id="T_3d197_row3_col1" class="data row3 col1" >1.0000</td>
+      <td id="T_3d197_row3_col2" class="data row3 col2" >1.0000</td>
+      <td id="T_3d197_row3_col3" class="data row3 col3" >1.0000</td>
+      <td id="T_3d197_row3_col4" class="data row3 col4" >1.0000</td>
+      <td id="T_3d197_row3_col5" class="data row3 col5" >1.0000</td>
+      <td id="T_3d197_row3_col6" class="data row3 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_3d197_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_3d197_row4_col0" class="data row4 col0" >0.7143</td>
+      <td id="T_3d197_row4_col1" class="data row4 col1" >0.7500</td>
+      <td id="T_3d197_row4_col2" class="data row4 col2" >0.7143</td>
+      <td id="T_3d197_row4_col3" class="data row4 col3" >0.7143</td>
+      <td id="T_3d197_row4_col4" class="data row4 col4" >0.7143</td>
+      <td id="T_3d197_row4_col5" class="data row4 col5" >0.4167</td>
+      <td id="T_3d197_row4_col6" class="data row4 col6" >0.4167</td>
+    </tr>
+    <tr>
+      <th id="T_3d197_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_3d197_row5_col0" class="data row5 col0" >0.7143</td>
+      <td id="T_3d197_row5_col1" class="data row5 col1" >1.0000</td>
+      <td id="T_3d197_row5_col2" class="data row5 col2" >0.7143</td>
+      <td id="T_3d197_row5_col3" class="data row5 col3" >0.8286</td>
+      <td id="T_3d197_row5_col4" class="data row5 col4" >0.7024</td>
+      <td id="T_3d197_row5_col5" class="data row5 col5" >0.4615</td>
+      <td id="T_3d197_row5_col6" class="data row5 col6" >0.5477</td>
+    </tr>
+    <tr>
+      <th id="T_3d197_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_3d197_row6_col0" class="data row6 col0" >1.0000</td>
+      <td id="T_3d197_row6_col1" class="data row6 col1" >1.0000</td>
+      <td id="T_3d197_row6_col2" class="data row6 col2" >1.0000</td>
+      <td id="T_3d197_row6_col3" class="data row6 col3" >1.0000</td>
+      <td id="T_3d197_row6_col4" class="data row6 col4" >1.0000</td>
+      <td id="T_3d197_row6_col5" class="data row6 col5" >1.0000</td>
+      <td id="T_3d197_row6_col6" class="data row6 col6" >1.0000</td>
+    </tr>
+    <tr>
+      <th id="T_3d197_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_3d197_row7_col0" class="data row7 col0" >0.4286</td>
+      <td id="T_3d197_row7_col1" class="data row7 col1" >0.7500</td>
+      <td id="T_3d197_row7_col2" class="data row7 col2" >0.4286</td>
+      <td id="T_3d197_row7_col3" class="data row7 col3" >0.4571</td>
+      <td id="T_3d197_row7_col4" class="data row7 col4" >0.4048</td>
+      <td id="T_3d197_row7_col5" class="data row7 col5" >-0.0769</td>
+      <td id="T_3d197_row7_col6" class="data row7 col6" >-0.0913</td>
+    </tr>
+    <tr>
+      <th id="T_3d197_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_3d197_row8_col0" class="data row8 col0" >0.8571</td>
+      <td id="T_3d197_row8_col1" class="data row8 col1" >1.0000</td>
+      <td id="T_3d197_row8_col2" class="data row8 col2" >0.8571</td>
+      <td id="T_3d197_row8_col3" class="data row8 col3" >0.8929</td>
+      <td id="T_3d197_row8_col4" class="data row8 col4" >0.8571</td>
+      <td id="T_3d197_row8_col5" class="data row8 col5" >0.7200</td>
+      <td id="T_3d197_row8_col6" class="data row8 col6" >0.7500</td>
+    </tr>
+    <tr>
+      <th id="T_3d197_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_3d197_row9_col0" class="data row9 col0" >0.7143</td>
+      <td id="T_3d197_row9_col1" class="data row9 col1" >0.9167</td>
+      <td id="T_3d197_row9_col2" class="data row9 col2" >0.7143</td>
+      <td id="T_3d197_row9_col3" class="data row9 col3" >0.7143</td>
+      <td id="T_3d197_row9_col4" class="data row9 col4" >0.7143</td>
+      <td id="T_3d197_row9_col5" class="data row9 col5" >0.4167</td>
+      <td id="T_3d197_row9_col6" class="data row9 col6" >0.4167</td>
+    </tr>
+    <tr>
+      <th id="T_3d197_level0_row10" class="row_heading level0 row10" >Mean</th>
+      <td id="T_3d197_row10_col0" class="data row10 col0" >0.8143</td>
+      <td id="T_3d197_row10_col1" class="data row10 col1" >0.9083</td>
+      <td id="T_3d197_row10_col2" class="data row10 col2" >0.8143</td>
+      <td id="T_3d197_row10_col3" class="data row10 col3" >0.8436</td>
+      <td id="T_3d197_row10_col4" class="data row10 col4" >0.8095</td>
+      <td id="T_3d197_row10_col5" class="data row10 col5" >0.6399</td>
+      <td id="T_3d197_row10_col6" class="data row10 col6" >0.6587</td>
+    </tr>
+    <tr>
+      <th id="T_3d197_level0_row11" class="row_heading level0 row11" >Std</th>
+      <td id="T_3d197_row11_col0" class="data row11 col0" >0.1813</td>
+      <td id="T_3d197_row11_col1" class="data row11 col1" >0.1261</td>
+      <td id="T_3d197_row11_col2" class="data row11 col2" >0.1813</td>
+      <td id="T_3d197_row11_col3" class="data row11 col3" >0.1684</td>
+      <td id="T_3d197_row11_col4" class="data row11 col4" >0.1877</td>
+      <td id="T_3d197_row11_col5" class="data row11 col5" >0.3467</td>
+      <td id="T_3d197_row11_col6" class="data row11 col6" >0.3433</td>
+    </tr>
+  </tbody>
+</table>
+</div><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "0005e789794b431a81b1970e9a8e44a1"}</script><div class="output text_html"></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transformation Pipeline and Model Successfully Saved
+Transformation Pipeline and Model Successfully Loaded
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="model-random-forest">
+<h1><strong>MODEL RANDOM FOREST</strong><a class="headerlink" href="#model-random-forest" title="Permalink to this heading">#</a></h1>
+<p><strong>Random Forest</strong> adalah algoritma machine learning yang menggabungkan keluaran dari beberapa decision tree untuk mencapai satu hasil. Sesuai namanya, Forest atau ‘hutan’ dibentuk dari banyak tree (pohon) yang diperoleh melalui proses bagging atau bootstrap aggregating.</p>
+<p><strong>Kegunaannya:</strong></p>
+<p>Setiap tree pada Random Forest akan mengeluarkan prediksi kelas. Prediksi kelas dengan vote terbanyak menjadi kandidat prediksi pada model. Semakin banyak jumlah tree maka akan menghasilkan akurasi yang lebih tinggi dan mencegah masalah overfitting.</p>
+<p><strong>Cara Kerja Algoritma Random Forest:</strong></p>
+<p>Algoritma memilih sampel acak dari dataset yang disediakan.
+Membuat decision tree untuk setiap sampel yang dipilih. Kemudian akan didapatkan hasil prediksi dari setiap decision tree yang telah dibuat.
+Dilakukan proses voting untuk setiap hasil prediksi. Untuk masalah klasifikasi menggunakan modus (nilai yg paling sering muncul), sedangkan untuk masalah regresi akan menggunakan mean (nilai rata-rata).
+Algoritma akan memilih hasil prediksi yang paling banyak dipilih (vote terbanyak) sebagai prediksi akhir. Berikut adalah konsep-konsep yang terlibat dalam Random Forest:</p>
+<p><strong>Bootstrapping:</strong>
+Bootstrapping melibatkan pembuatan dataset subset dari dataset pelatihan dengan penggantian. Ukuran subset biasanya sama dengan ukuran dataset pelatihan.</p>
+<p><span class="math notranslate nohighlight">\(\text{{Bootstrapped Subset}} = \{ (x_i, y_i) \}_{i=1}^{n}\)</span></p>
+<p><strong>Random Feature Selection:</strong>
+Hanya sejumlah kecil fitur yang dipertimbangkan untuk setiap pohon dalam Random Forest. Ini membantu mengurangi korelasi antar pohon.</p>
+<p><span class="math notranslate nohighlight">\(\text{{Selected Features}} = \{ f_1, f_2, \ldots, f_k \}\)</span></p>
+<p><strong>Pohon Keputusan (Decision Tree):</strong>
+Sebuah pohon keputusan yang digunakan dalam Random Forest dapat direpresentasikan dalam bentuk LaTeX, namun rumusnya bisa sangat panjang. Sintaks umum untuk pohon keputusan dalam LaTeX adalah seperti berikut:</p>
+<p><span class="math notranslate nohighlight">\(\text{{Node 1: }} f_i \leq \text{{threshold}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad \text{{Node 2: }} f_j \leq \text{{threshold}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad \quad \text{{Leaf Node: }} \hat{y}_1\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad \text{{Node 3: }} f_k &gt; \text{{threshold}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad \quad \text{{Leaf Node: }} \hat{y}_2\)</span></p>
+<p><span class="math notranslate nohighlight">\(\text{{Node 4: }} f_l &gt; \text{{threshold}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad \text{{Leaf Node: }} \hat{y}_3\)</span></p>
+<p><strong>Agregasi (Voting atau Averaging):</strong></p>
+<p>Prediksi akhir diambil dari mayoritas voting (klasifikasi) atau rata-rata (regresi) prediksi individu.</p>
+<p><span class="math notranslate nohighlight">\(\text{{Final Prediction}} = \text{{Majority Vote (klasifikasi)}} \quad \text{{atau}} \quad \text{{Average (regresi)}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Library</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">pickle</span> <span class="kn">import</span> <span class="n">dump</span>
+
+<span class="c1"># Membuat model Random Forest</span>
+<span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Melatih model menggunakan data training yang telah dinormalisasi</span>
+<span class="n">rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_minmax</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Melakukan prediksi pada data testing yang telah dinormalisasi</span>
+<span class="n">y_pred_rf</span> <span class="o">=</span> <span class="n">rf_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_minmax</span><span class="p">)</span>
+
+<span class="c1"># Mengukur akurasi model Random Forest</span>
+<span class="n">accuracy_rf</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_rf</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy Random Forest with all features: </span><span class="si">{</span><span class="n">accuracy_rf</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+<span class="c1"># Menyimpan model yang telah dilatih</span>
+<span class="n">dump</span><span class="p">(</span><span class="n">rf_model</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;rf_sirtuin6.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy Random Forest with all features: 86.6667%
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="link-streamlit">
+<h1>LINK STREAMLIT<a class="headerlink" href="#link-streamlit" title="Permalink to this heading">#</a></h1>
+<p>link streamlit untuk tahapan klasifikasi sirtuin6 ada di bawah ini :</p>
+<p><a class="reference external" href="https://klasifikasi-sirtuin6-pycaret.streamlit.app/">https://klasifikasi-sirtuin6-pycaret.streamlit.app/</a></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ZCR_FIX.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Klasifikasi Pengenalan Audio</strong></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Klasifikasi Energi di dalam Sirtuin6</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding"><strong>DATA UNDERSTANDING</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset"><strong>DESKRIPSI DATASET</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-fitur"><strong>PENJELASAN FITUR</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-kelas"><strong>PENJELASAN KELAS</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-missing-value"><strong>IDENTIFIKASI MISSING VALUE</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-duplikasi-data"><strong>IDENTIFIKASI DUPLIKASI DATA</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data"><strong>EKSPLORASI DATA</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing"><strong>PREPROCESSING</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-minmax-setelah-split-data-normalisasi-bisa-dilakukan-sebelum-atau-sesudah-split-data"><strong>NORMALISASI MINMAX SETELAH SPLIT DATA (normalisasi bisa dilakukan sebelum atau sesudah split data)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pycaret"><strong>PYCARET</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-random-forest"><strong>MODEL RANDOM FOREST</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#link-streamlit">LINK STREAMLIT</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
